@@ -1,7 +1,7 @@
 # Import DOM
-
 from browser import document
 from browser import html
+
 
 def build_dict(path):
     # Load in word file and sort each line.
@@ -19,11 +19,13 @@ def build_dict(path):
             alpha[key] = line
     return alpha
 
+
 def sorted_line(line):
     # Sort the chars in this line and return a string.
     chars = [c for c in line]
     chars.sort()
     return "".join(chars)
+
 
 def anagram(alpha, line):
     # Return a list of anagrams from the dictionary.
@@ -31,6 +33,7 @@ def anagram(alpha, line):
     key = sorted_line(line)
     values = alpha.get(key, "NONE")
     return values.split(",")
+
 
 # Load our dictionary and use it.
 alpha = build_dict(r"Dictionary/Dictionary.txt")
